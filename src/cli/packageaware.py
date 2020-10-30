@@ -180,7 +180,7 @@ class PackageAwareContext:
             self.client_id = str(args.client_id)
             PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Parameter Loaded")
 
-        if args.base_uri is not None:
+        if args.api_key is not None:
             self.api_key = str(args.api_key)
             PackageAware.console_log("PACKAGE_AWARE_API_KEY Parameter Loaded")
 
