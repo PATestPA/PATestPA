@@ -128,35 +128,35 @@ class PackageAwareContext:
         try:
             if self.base_uri is None:
                 self.base_uri = os.environ["PACKAGE_AWARE_API_BASE_URI"]
-                PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Environment Variable Loaded")
+                PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Environment Variable Loaded: " + self.base_uri)
         except Exception as e:
             pass
 
         try:
             if self.source_code_path is None:
                 self.source_code_path = os.environ['PACKAGE_AWARE_ROOT_CODE_PATH']
-                PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Environment Variable Loaded")
+                PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Environment Variable Loaded: " + self.source_code_path)
         except Exception as e:
             pass
 
         try:
             if self.project_name is None:
                 self.project_name = os.environ['PACKAGE_AWARE_PROJECT_NAME']
-                PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Environment Variable Loaded")
+                PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Environment Variable Loaded: " + self.project_name)
         except Exception as e:
             pass
 
         try:
             if self.client_id is None:
                 self.client_id = os.environ['PACKAGE_AWARE_CLIENT_ID']
-                PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Environment Variable Loaded")
+                PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Environment Variable Loaded: SECRET")
         except Exception as e:
             pass
 
         try:
             if self.api_key is None:
                 self.api_key = os.environ['PACKAGE_AWARE_API_KEY']
-                PackageAware.console_log("PACKAGE_AWARE_API_KEY Environment Variable Loaded")
+                PackageAware.console_log("PACKAGE_AWARE_API_KEY Environment Variable Loaded: SECRET")
         except Exception as e:
             pass
 
@@ -166,23 +166,23 @@ class PackageAwareContext:
 
         if args.base_uri is not None:
             self.base_uri = str(args.base_uri)
-            PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Parameter Loaded")
+            PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Parameter Loaded: " + self.base_uri)
 
         if args.source_code_path is not None:
             self.source_code_path = str(args.source_code_path)
-            PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Parameter Loaded")
+            PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Parameter Loaded: " + self.source_code_path)
 
         if args.project_name is not None:
             self.project_name = str(args.project_name)
-            PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Parameter Loaded")
+            PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Parameter Loaded: " + self.project_name)
 
         if args.client_id is not None:
             self.client_id = str(args.client_id)
-            PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Parameter Loaded")
+            PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Parameter Loaded: SECRET")
 
         if args.api_key is not None:
             self.api_key = str(args.api_key)
-            PackageAware.console_log("PACKAGE_AWARE_API_KEY Parameter Loaded")
+            PackageAware.console_log("PACKAGE_AWARE_API_KEY Parameter Loaded: SECRET")
 
     def is_valid(self):
 
