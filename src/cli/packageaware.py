@@ -162,7 +162,8 @@ class PackageAwareContext:
 
     def load_from_parameters(self, args):
 
-        self.reset()
+        # Do not reset - enable parameters to override environment variables
+        # self.reset()
 
         if args.base_uri is not None:
             self.base_uri = str(args.base_uri)
@@ -764,14 +765,14 @@ class PackageAwareAnalysisScript:
         parser.add_argument("-buri", dest="base_uri",
                             help="API URI Path. Default Value: https://api.packageaware.io/api/",
                             type=str,
-                            default="https://api.packageaware.io/api/",
+                            # default="https://api.packageaware.io/api/",
                             required=False
                             )
 
         parser.add_argument("-scp", dest="source_code_path",
                             help="Root path to begin recursive search for manifests. Default Value: ./",
                             type=str,
-                            default="./",
+                            # default="./",
                             required=False
                             )
 
