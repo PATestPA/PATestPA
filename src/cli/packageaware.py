@@ -14,6 +14,7 @@ import platform
 from pathlib import Path  # User Home Folder references
 
 
+
 class PackageAwareStructureAPIResponse:
 
     def __init__(self, structure_response):
