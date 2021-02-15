@@ -128,62 +128,61 @@ class PackageAwareContext:
         try:
             if self.base_uri is None:
                 self.base_uri = os.environ["PACKAGE_AWARE_API_BASE_URI"]
-                PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Environment Variable Loaded: " + self.base_uri)
+                PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Environment Variable Loaded")
         except Exception as e:
             pass
 
         try:
             if self.source_code_path is None:
                 self.source_code_path = os.environ['PACKAGE_AWARE_ROOT_CODE_PATH']
-                PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Environment Variable Loaded: " + self.source_code_path)
+                PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Environment Variable Loaded")
         except Exception as e:
             pass
 
         try:
             if self.project_name is None:
                 self.project_name = os.environ['PACKAGE_AWARE_PROJECT_NAME']
-                PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Environment Variable Loaded: " + self.project_name)
+                PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Environment Variable Loaded")
         except Exception as e:
             pass
 
         try:
             if self.client_id is None:
                 self.client_id = os.environ['PACKAGE_AWARE_CLIENT_ID']
-                PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Environment Variable Loaded: SECRET")
+                PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Environment Variable Loaded")
         except Exception as e:
             pass
 
         try:
             if self.api_key is None:
                 self.api_key = os.environ['PACKAGE_AWARE_API_KEY']
-                PackageAware.console_log("PACKAGE_AWARE_API_KEY Environment Variable Loaded: SECRET")
+                PackageAware.console_log("PACKAGE_AWARE_API_KEY Environment Variable Loaded")
         except Exception as e:
             pass
 
     def load_from_parameters(self, args):
 
-        # Do not reset - enable parameters to override environment variables
-        # self.reset()
+        self.reset()
 
         if args.base_uri is not None:
             self.base_uri = str(args.base_uri)
-            PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Parameter Loaded: " + self.base_uri)
+            PackageAware.console_log("PACKAGE_AWARE_API_BASE_URI Parameter Loaded")
 
         if args.source_code_path is not None:
             self.source_code_path = str(args.source_code_path)
-            PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Parameter Loaded: " + self.source_code_path)
+            PackageAware.console_log("PACKAGE_AWARE_ROOT_CODE_PATH Parameter Loaded")
 
         if args.project_name is not None:
             self.project_name = str(args.project_name)
-            PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Parameter Loaded: " + self.project_name)
+            PackageAware.console_log("PACKAGE_AWARE_PROJECT_NAME Parameter Loaded")
 
         if args.client_id is not None:
             self.client_id = str(args.client_id)
-            PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Parameter Loaded: SECRET")
+            PackageAware.console_log("PACKAGE_AWARE_CLIENT_ID Parameter Loaded")
 
-        if args.api_key is not None:
+        if args.base_uri is not None:
             self.api_key = str(args.api_key)
-            PackageAware.console_log("PACKAGE_AWARE_API_KEY Parameter Loaded: SECRET")
+            PackageAware.console_log("PACKAGE_AWARE_API_KEY Parameter Loaded")
 
     def is_valid(self):
 
@@ -765,14 +764,14 @@ class PackageAwareAnalysisScript:
         parser.add_argument("-buri", dest="base_uri",
                             help="API URI Path. Default Value: https://api.packageaware.io/api/",
                             type=str,
-                            # default="https://api.packageaware.io/api/",
+                            default="https://api.packageaware.io/api/",
                             required=False
                             )
 
         parser.add_argument("-scp", dest="source_code_path",
                             help="Root path to begin recursive search for manifests. Default Value: ./",
                             type=str,
-                            # default="./",
+                            default="./",
                             required=False
                             )
 
