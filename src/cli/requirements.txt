@@ -4,3 +4,4 @@ idna==2.10
 manage.py==0.2.10
 requests==2.24.0
 urllib3==1.25.10
+
